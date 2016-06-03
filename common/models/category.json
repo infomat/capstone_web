@@ -21,6 +21,12 @@
       "type": "hasMany",
       "model": "Receipt",
       "foreignKey": "categoryId"
+    },
+    "stores": {
+      "type": "hasMany",
+      "model": "Store",
+      "foreignKey": "categoryId",
+      "through": "StoreCategory"
     }
   },
   "acls": [

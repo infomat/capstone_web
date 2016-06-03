@@ -1,17 +1,14 @@
 {
-  "name": "Store",
+  "name": "Tag",
   "base": "PersistedModel",
-  "idInjection": true,
+  "strict": false,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
-  "mixins": {
-    "TimeStamp": true
-  },
   "properties": {
     "name": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "id": {
       "type": "number",
@@ -23,13 +20,8 @@
     "receipts": {
       "type": "hasMany",
       "model": "Receipt",
-      "foreignKey": "storeId"
-    },
-    "categories": {
-      "type": "hasMany",
-      "model": "Category",
-      "foreignKey": "storeId",
-      "through": "StoreCategory"
+      "foreignKey": "tagId",
+      "through": "ReceiptTag"
     }
   },
   "acls": [],

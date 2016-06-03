@@ -3,7 +3,7 @@
     "name": "db",
     "connector": "memory"
   },
-      "storage": {
+  "storage": {
     "name": "storage",
     "connector": "loopback-component-storage",
     "provider": "filesystem",

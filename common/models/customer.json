@@ -9,15 +9,26 @@
     "TimeStamp": true
   },
   "properties": {
+    "lastname": {
+      "type": "string"
+    },
+    "firstname": {
+      "type": "string"
+    },
     "dateOfBirth": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "gender": {
-      "type": "number"
-    },
-    "accountTypeId": {
       "type": "number",
-      "id": false
+      "required": true
+    },
+    "phonenumber": {
+      "type": "number",
+      "required": true
+    },
+    "groupId": {
+      "type": "number"
     }
   },
   "validations": [],
@@ -27,10 +38,10 @@
       "model": "Receipt",
       "foreignKey": "customerId"
     },
-    "accountType": {
+    "group": {
       "type": "belongsTo",
-      "model": "AccountType",
-      "foreignKey": "customerId"
+      "model": "Group",
+      "foreignKey": "groupId"
     }
   },
   "acls": [

@@ -1,14 +1,19 @@
 {
-  "name": "Store",
+  "name": "GroupType",
   "base": "PersistedModel",
-  "idInjection": true,
+  "strict": false,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
-  "mixins": {
-    "TimeStamp": true
-  },
   "properties": {
+    "limitedMember": {
+      "type": "number"
+    },
+    "limitedReceipt": {
+      "type": "number",
+      "id": false
+    },
     "name": {
       "type": "string",
       "required": true
@@ -20,16 +25,10 @@
   },
   "validations": [],
   "relations": {
-    "receipts": {
+    "groups": {
       "type": "hasMany",
-      "model": "Receipt",
-      "foreignKey": "storeId"
-    },
-    "categories": {
-      "type": "hasMany",
-      "model": "Category",
-      "foreignKey": "storeId",
-      "through": "StoreCategory"
+      "model": "Group",
+      "foreignKey": "typeId"
     }
   },
   "acls": [],
