@@ -17,16 +17,33 @@
       "type": "number",
       "required": true
     },
-    "error": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
     "comment": {
       "type": "string"
     },
+    "error": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
     "imageFilePath": {
       "type": "string",
+      "required": true
+    },
+    "customerId": {
+      "type": "number",
+      "required": true
+    },
+    "categoryId": {
+      "type": "number",
+      "required": true
+    },
+    "storeId": {
+      "type": "number",
+      "required": true
+    },
+    "id": {
+      "type": "string",
+      "id": true,
       "required": false
     }
   },
@@ -42,6 +59,17 @@
       "type": "belongsTo",
       "model": "Store",
       "foreignKey": "storeId"
+    },
+    "tags": {
+      "type": "hasMany",
+      "model": "Tag",
+      "foreignKey": "receiptId",
+      "through": "ReceiptTag"
+    },
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": "customerId"
     }
   },
   "acls": [],

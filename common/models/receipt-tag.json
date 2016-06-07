@@ -1,0 +1,28 @@
+{
+  "name": "ReceiptTag",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "tagId": {
+      "type": "number",
+      "required": true
+    },
+    "receiptId": {
+      "type": "number",
+      "required": true
+    },
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
